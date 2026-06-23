@@ -1,0 +1,34 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: build
+        run: gcc -O2 -std=c99 -Wall -Wextra -o packpeek packpeek.c -lm
+      - name: packed sample (UPX markers + high entropy) -> exit 2
+        run: |
+          printf 'UPX0UPX1UPX!' > sample.bin
+          head -c 8192 /dev/urandom >> sample.bin
+          set +e
+          out=$(./packpeek sample.bin); code=$?
+          echo "$out"; echo "exit=$code"
+          echo "$out" | grep -q '"verdict":"packed"' || { echo "expected packed"; exit 1; }
+          echo "$out" | grep -q '"name":"UPX"' || { echo "expected UPX"; exit 1; }
+          [ "$code" = "2" ] || { echo "expected exit 2"; exit 1; }
+      - name: clean sample (low entropy, no markers) -> exit 0
+        run: |
+          yes A | head -c 8192 > clean.bin
+          set +e
+          out=$(./packpeek clean.bin); code=$?
+          echo "$out"; echo "exit=$code"
+          echo "$out" | grep -q '"verdict":"clean"' || { echo "expected clean"; exit 1; }
+          [ "$code" = "0" ] || { echo "expected exit 0"; exit 1; }
+      - name: SARIF + YARA companion
+        run: |
+          ./packpeek sample.bin | python sarif.py | python -c "import json,sys;json.load(sys.stdin)"
+          ./packpeek sample.bin | python sarif.py --yara | grep -q 'rule packpeek_'

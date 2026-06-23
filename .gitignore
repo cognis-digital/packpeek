@@ -1,0 +1,5 @@
+*.o
+a.out
+packpeek
+*.bin
+__pycache__/
