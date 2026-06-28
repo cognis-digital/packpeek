@@ -12,6 +12,41 @@ Format-agnostic (PE / ELF / Mach-O / firmware blob), dependency-free, JSON-out. 
 
 > Defensive triage only — reads a file, makes no network calls, executes nothing.
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+"packs": [
+  {
+    "id": "1234567890",
+    "name": "Pack 1",
+    "size": 100,
+    "weight": 5.2,
+    "contents": [
+      {"item": "Item A", "quantity": 3},
+      {"item": "Item B", "quantity": 2}
+    ]
+  },
+  {
+    "id": "2345678901",
+    "name": "Pack 2",
+    "size": 50,
+    "weight": 2.8,
+    "contents": [
+      {"item": "Item C", "quantity": 4},
+      {"item": "Item D", "quantity": 1}
+    ]
+  }
+]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Build
 
 ```bash
