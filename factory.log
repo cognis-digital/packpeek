@@ -1,0 +1,28 @@
+[2026-08-15 00:33:08] === enhance · packpeek · words=120000 loc>=10000 langs=9 push=True ===
+[2026-08-15 00:33:13] phase DOCS — longform 120000-word corpus -> docs/corpus/
+[2026-08-15 08:37:35] phase POLYGLOT — expanding to >= 10000 LOC across 9 languages
+[2026-08-15 08:38:03]   facets: ['binary_parser', 'entropy_analyzer', 'signature_matcher', 'resource_scanner', 'yara_emitter', 'sarif_writer']
+[2026-08-15 08:39:59]   +polyglot/python/binary_parser.py  (loc now ~695)
+[2026-08-15 08:41:54]   +polyglot/go/binary_parser.go  (loc now ~1124)
+[2026-08-15 08:44:08]   +polyglot/rust/binary_parser.rs  (loc now ~1517)
+[2026-08-15 08:46:04]   +polyglot/typescript/binary_parser.ts  (loc now ~1966)
+[2026-08-15 08:48:20]   +polyglot/c/binary_parser.c  (loc now ~2382)
+[2026-08-15 08:50:15]   +polyglot/cpp/binary_parser.cpp  (loc now ~2816)
+[2026-08-15 08:52:11]   +polyglot/java/binary_parser.java  (loc now ~3206)
+[2026-08-15 08:54:27]   +polyglot/ruby/binary_parser.rb  (loc now ~3586)
+[2026-08-15 08:56:24]   +polyglot/csharp/binary_parser.cs  (loc now ~3894)
+[2026-08-15 08:58:24]   +polyglot/python/entropy_analyzer.py  (loc now ~4279)
+[2026-08-15 09:00:28]   +polyglot/go/entropy_analyzer.go  (loc now ~4710)
+[2026-08-15 09:04:44]   +polyglot/rust/entropy_analyzer.rs  (loc now ~5167)
+[2026-08-15 09:07:09]   +polyglot/typescript/entropy_analyzer.ts  (loc now ~5448)
+[2026-08-15 09:11:03]   +polyglot/c/entropy_analyzer.c  (loc now ~5885)
+[2026-08-15 09:13:16]   +polyglot/cpp/entropy_analyzer.cpp  (loc now ~6330)
+[2026-08-15 09:14:50]   +polyglot/java/entropy_analyzer.java  (loc now ~6675)
+[2026-08-15 09:15:38]   +polyglot/ruby/entropy_analyzer.rb  (loc now ~6868)
+[2026-08-15 09:17:34]   +polyglot/csharp/entropy_analyzer.cs  (loc now ~7389)
+[2026-08-15 09:19:50]   +polyglot/python/signature_matcher.py  (loc now ~7863)
+[2026-08-15 09:21:45]   +polyglot/go/signature_matcher.go  (loc now ~8285)
+[2026-08-15 09:24:00]   +polyglot/rust/signature_matcher.rs  (loc now ~8722)
+[2026-08-15 09:25:56]   +polyglot/typescript/signature_matcher.ts  (loc now ~9220)
+[2026-08-15 09:27:53]   +polyglot/c/signature_matcher.c  (loc now ~9682)
+[2026-08-15 09:30:07]   +polyglot/cpp/signature_matcher.cpp  (loc now ~10117)
